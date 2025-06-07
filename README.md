@@ -61,17 +61,18 @@ A análise dos dados coletados em `resultados.csv` revelou os seguintes pontos c
 ### 1. O Impacto do Fator de Carga
 O fator de carga (`α = Número de Dados / Tamanho da Tabela`) é o indicador mais crítico de desempenho. Como observado no gráfico de "Comparações vs. Fator de Carga", há uma correlação direta e acentuada: quanto maior o fator de carga, maior o número de comparações e, consequentemente, pior o tempo de busca.
 
-![Gráfico de Comparações vs. Fator de Carga](https://i.imgur.com/K1L7l6P.png) 
+![image](https://github.com/user-attachments/assets/b9895f0d-fc39-446b-b4ea-e0f1ce55a389)
 *(Exemplo de gráfico gerado a partir dos dados)*
 
 ### 2. Comparativo das Funções de Hash
 -   **Divisão e Multiplicação:** Ambas as funções se mostraram robustas e eficientes, com um número de colisões muito similar entre si e próximo do valor teórico esperado.
 -   **Dobramento:** A implementação específica de dobramento (`HashDobramento`) se mostrou **menos eficaz** que as outras, gerando um número de colisões significativamente maior. Isso ocorreu porque a soma das partes da chave gerava valores em uma faixa restrita, não aproveitando todo o espaço de endereçamento das tabelas maiores.
 
-![Gráfico de Colisões por Função](https://i.imgur.com/K1L7l6P.png)
+![image](https://github.com/user-attachments/assets/c40e3410-08c6-4142-8d0e-4e5363606c79)
 *(Exemplo de gráfico gerado a partir dos dados)*
 
 ### 3. A Importância do Tamanho da Tabela
 Aumentar o tamanho da tabela, diminuindo o fator de carga, tem um impacto drástico e positivo na performance de busca. Os testes mostraram que, para um mesmo volume de dados, uma tabela 10x maior pode reduzir o tempo de busca e o número de comparações em mais de 90%.
+![image](https://github.com/user-attachments/assets/fc9ed5cd-2acf-426b-80e7-bf2a6cf9356a)
 
 ---
